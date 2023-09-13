@@ -103,7 +103,7 @@ module ExecJS
       @popen_options[:internal_encoding] = ::Encoding.default_internal || 'UTF-8'
 
       if @runner_path
-        instance_eval <<~RUBY, __FILE__, __LINE__
+        instance_eval <<-RUBY, __FILE__, __LINE__
           def compile_source(source)
             <<-RUNNER
             #{IO.read(@runner_path)}
